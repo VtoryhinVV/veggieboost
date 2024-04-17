@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.header___mainBtn {
+  display: flex;
+  gap: 20px;
+
+  & a {
+    text-decoration: none;
+  }
+}
