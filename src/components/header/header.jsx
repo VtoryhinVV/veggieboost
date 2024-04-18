@@ -17,7 +17,7 @@ export default function Header() {
             </svg>
           </Link>
           <Link to="/order">
-            <svg width="20" height="20">
+            <svg width="20" height="20" className={css.header___orderIcon}>
               <use href="svg-icons.svg#icon-cart"></use>
             </svg>
           </Link>
