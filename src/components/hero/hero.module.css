@@ -4,6 +4,10 @@
 .hero {
   padding-top: 132px;
   padding-bottom: 32px;
+  display: flex;
+}
+.hero___info {
+  width: 60%;
 }
 .hero___reviewsImgs {
   display: flex;
@@ -31,4 +35,56 @@
 
 .hero___reviewsInfo p {
   margin: 0;
+}
+
+.hero___titel {
+  font-size: 64px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  & span {
+    font-style: italic;
+  }
+}
+
+.hero___description {
+  color: white;
+  max-width: 500px;
+  line-height: 1.28;
+  letter-spacing: -0.5px;
+  margin-bottom: 32px;
+}
+
+.hero___img {
+  width: 517px;
+  height: 429px;
+  background: center no-repeat url("/img/hero.png");
+  margin-bottom: 50px;
+}
+
+.hero___shopNow {
+  width: 132px;
+  height: 132px;
+  background-color: white;
+  border-radius: 100%;
+  color: #fc8a11;
+  display: flex;
+  align-items: center;
+
+  & p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    transform: rotate(-20deg);
+  }
+}
+
+.hero___btnInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 300px;
+  margin-left: auto;
 }

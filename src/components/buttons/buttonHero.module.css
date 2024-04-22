@@ -1,0 +1,15 @@
+.button {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 20px;
+  transition: background-color 500ms, color 500ms linear;
+  padding: 12px 32px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  &:hover,
+  &:active {
+    background-color: white;
+    color: black;
+  }
+}
