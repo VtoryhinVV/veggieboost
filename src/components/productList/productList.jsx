@@ -5,27 +5,35 @@ import css from "./productList.module.css";
 export default function ProductList() {
   return (
     <section>
-      <div>
-        <h2>oRGANIC vegetables</h2>
-        <p>
-          Our organic vegetables are hand-picked from local farms and delivered
-          straight to your doorstep, ensuring that you get the freshest and most
-          nutritious produce possible.
-        </p>
+      <div className="container">
+        <div className={css.productList___titleInfo}>
+          <h2>oRGANIC vegetables</h2>
+          <p>
+            Our organic vegetables are hand-picked from local farms and
+            delivered straight to your doorstep, ensuring that you get the
+            freshest and most nutritious produce possible.
+          </p>
+        </div>
+        <ul className={css.productList___products}>
+          {data.map((info, idx) => {
+            return (
+              <ProductCard
+                key={idx}
+                name={info.name}
+                type={info.type}
+                price={info.price}
+                src={info.src}
+              />
+            );
+          })}
+        </ul>
+        <button type="submit" className={css.productList___orderBtn}>
+          <svg width="14" height="14">
+            <use href="svg-icons.svg#icon-arrow"></use>
+          </svg>
+          <p>order</p>
+        </button>
       </div>
-      <ul>
-        {data.map((info, idx) => {
-          return (
-            <ProductCard
-              key={idx}
-              name={info.name}
-              type={info.type}
-              price={info.price}
-              src={info.src}
-            />
-          );
-        })}
-      </ul>
     </section>
   );
 }

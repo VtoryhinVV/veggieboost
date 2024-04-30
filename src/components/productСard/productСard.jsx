@@ -1,10 +1,14 @@
+import css from "./productCard.module.css";
+
 export default function ProductCard({ name, type, price, src }) {
   return (
-    <li>
-      <h3>{name}</h3>
-      <p>{type}</p>
+    <li className={css.card}>
+      <div>
+        <h3>{name}</h3>
+        <p className={css.card___type}>{type}</p>
+      </div>
       <img src={src} />
-      <p>{price} UAH/kg</p>
+      <p className={css.productList___price}>{price} UAH/kg</p>
     </li>
   );
 }
