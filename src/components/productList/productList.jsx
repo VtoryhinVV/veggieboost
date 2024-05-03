@@ -4,7 +4,7 @@ import css from "./productList.module.css";
 
 export default function ProductList() {
   return (
-    <section>
+    <section className={css.productList}>
       <div className="container">
         <div className={css.productList___titleInfo}>
           <h2>oRGANIC vegetables</h2>

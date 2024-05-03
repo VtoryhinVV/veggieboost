@@ -1,0 +1,30 @@
+.shipping {
+  margin-bottom: 168px;
+}
+
+.shipping___container {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+}
+.shipping__bgImg {
+  background-image: url("/img/shippingBg.png");
+  width: 578px;
+  height: 339px;
+}
+
+.shipping__info {
+  font-size: 40px;
+  font-weight: 500;
+  max-width: 437px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.greenAccent {
+  color: #a1c487;
+}
+
+.orangeAccent {
+  color: #fc8a11;
+}
