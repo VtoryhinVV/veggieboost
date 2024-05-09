@@ -1,0 +1,15 @@
+.phoneInput {
+  display: flex;
+}
+
+.phoneInput___buttonSubmite {
+  margin-left: -15px;
+  padding: 5px 25px;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  background-color: #fc8a11;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+  cursor: pointer;
+}

@@ -1,11 +1,12 @@
+import clsx from "clsx";
 import PhoneInput from "../phoneInput/phoneInpute";
 import css from "./orderCall.module.css";
 
 export default function OrderCall() {
   return (
     <section>
-      <div className="container">
-        <div>
+      <div className={clsx("container", css.orderCall)}>
+        <div className={css.orderCall___info}>
           <h2>Fresh Harvest Box has got you covered</h2>
           <p>
             Our boxes are packed with delicious, nutritious vegetables, perfect
@@ -14,7 +15,7 @@ export default function OrderCall() {
           </p>
           <PhoneInput />
         </div>
-        <div></div>
+        <div className={css.orderCall___img}></div>
       </div>
     </section>
   );
