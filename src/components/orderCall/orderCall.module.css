@@ -25,4 +25,5 @@
   width: 525px;
   height: 400px;
   background-image: url("/img/orderCall.png");
+  border-radius: 80px;
 }
