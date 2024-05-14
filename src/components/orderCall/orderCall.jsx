@@ -4,8 +4,8 @@ import css from "./orderCall.module.css";
 
 export default function OrderCall() {
   return (
-    <section>
-      <div className={clsx("container", css.orderCall)}>
+    <section className={css.orderCall}>
+      <div className={clsx("container", css.orderCall___container)}>
         <div className={css.orderCall___info}>
           <h2>Fresh Harvest Box has got you covered</h2>
           <p>
