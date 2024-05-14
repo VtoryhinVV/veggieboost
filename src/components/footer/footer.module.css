@@ -1,0 +1,67 @@
+.footer {
+  padding: 32px;
+  background-color: #eaf7e5;
+}
+.footer___container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer___logo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.footer___img {
+  width: 349px;
+  height: 179px;
+  background: center no-repeat url("/img/vegetablesFooter.png");
+}
+
+.footer___nav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 24px;
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+      color: black;
+      transition: color 250ms linear;
+    }
+
+    a:hover,
+    a:focus {
+      color: green;
+    }
+  }
+}
+
+.footer___social {
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  li {
+    list-style: none;
+    a {
+      fill: #141414;
+      border: 1px solid #141414;
+      border-radius: 10px;
+      /* padding: 8px; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      transition: fill 250ms, border-color 250ms linear;
+    }
+    a:hover,
+    a:focus {
+      fill: green;
+      border-color: green;
+    }
+  }
+}
