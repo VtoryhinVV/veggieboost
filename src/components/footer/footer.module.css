@@ -57,11 +57,11 @@
       width: 44px;
       height: 44px;
       transition: fill 250ms, border-color 250ms linear;
-    }
-    a:hover,
-    a:focus {
-      fill: green;
-      border-color: green;
+      &:hover,
+      &:focus {
+        fill: #a1c487;
+        border-color: #a1c487;
+      }
     }
   }
 }

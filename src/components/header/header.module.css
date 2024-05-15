@@ -2,25 +2,71 @@
   display: flex;
   justify-content: space-between;
   padding: 15px 0;
+  position: relative;
+}
+
+.header___logo {
+  height: min-content;
+  display: flex;
+  align-items: center;
 }
 
 .header___mainBtn {
-  display: flex;
-  gap: 20px;
-
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-  }
-
-  a:hover,
-  a:focus {
-    color: green;
+  display: none;
+  @media screen and (min-width: 500px) {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      height: min-content;
+      color: black;
+      transition: color 250ms linear;
+      &:hover,
+      &:focus {
+        color: green;
+      }
+    }
   }
 }
 
-.header___orderIcon:hover,
-.header___orderIcon:focus {
-  fill: green;
+.header___mainBtnMob {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+
+    height: min-content;
+    color: white;
+    transition: color 250ms linear;
+    &:hover,
+    &:focus {
+      color: green;
+    }
+  }
+}
+
+.header___orderIconMob svg {
+  fill: white;
+  transition: fill 250ms linear;
+  &:hover,
+  &:focus {
+    fill: green;
+  }
+}
+
+.header___orderIcon {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    transition: fill 250ms linear;
+    &:hover,
+    &:focus {
+      fill: green;
+    }
+  }
 }

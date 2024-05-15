@@ -10,11 +10,12 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/order" element={<About />} />
-        <Route path="/products" element={<Products />} /> */}
+        {/* <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/products" element={<Vegetables />} /> */}
+        {/* <Route path="/contacts" element={<ContactPage />} /> */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
