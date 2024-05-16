@@ -44,13 +44,17 @@
   z-index: 100;
   width: 100%;
   background: #77ac63;
-  padding: 50px 0;
+
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
   opacity: 0;
+  height: 0;
+  overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .open .menu {
+  padding: 50px 0;
   opacity: 1;
+  height: auto;
 }

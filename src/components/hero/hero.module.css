@@ -3,12 +3,20 @@
   margin-bottom: 124px;
 }
 .hero {
-  padding-top: 132px;
+  padding-top: 32px;
   padding-bottom: 32px;
-  display: flex;
+  @media screen and (min-width: 768px) {
+    padding-top: 64px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 132px;
+    display: flex;
+  }
 }
 .hero___info {
-  width: 60%;
+  @media screen and (min-width: 1280px) {
+    width: 60%;
+  }
 }
 .hero___reviewsImgs {
   display: flex;
@@ -39,11 +47,18 @@
 }
 
 .hero___titel {
-  font-size: 64px;
+  font-size: 40px;
   color: white;
   font-weight: 500;
   text-transform: uppercase;
-  & span {
+  margin: 16px 0;
+  @media screen and (min-width: 768px) {
+    font-size: 54px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 64px;
+  }
+  span {
     font-style: italic;
   }
 }
@@ -57,24 +72,38 @@
 }
 
 .hero___img {
-  width: 517px;
-  height: 429px;
+  display: none;
   background: center no-repeat url("/img/hero.png");
-  margin-bottom: 50px;
+  background-size: contain;
+  margin: 0 auto 8px;
+  @media screen and (min-width: 320px) {
+    display: block;
+    width: 303px;
+    height: 236px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 488px;
+    height: 393px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 517px;
+    height: 429px;
+    margin-bottom: 50px;
+  }
 }
 
 .hero___shopNow {
-  width: 132px;
-  height: 132px;
+  width: 68px;
+  height: 68px;
   background-color: white;
   border-radius: 100%;
   color: #fc8a11;
   display: flex;
   align-items: center;
-  & p {
+  p {
     text-align: center;
     text-transform: uppercase;
-    font-size: 28px;
+    font-size: 16px;
     font-weight: 700;
     margin: 0;
     transform: rotate(-20deg);
@@ -84,12 +113,33 @@
   &:focus p {
     transform: rotate(0);
   }
+  @media screen and (min-width: 768px) {
+    width: 114px;
+    height: 114px;
+    p {
+      font-size: 24px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    width: 132px;
+    height: 132px;
+    p {
+      font-size: 28px;
+    }
+  }
 }
 
 .hero___btnInfo {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  max-width: 300px;
+  gap: 4px;
+  max-width: 169px;
   margin-left: auto;
+  @media screen and (min-width: 768px) {
+    max-width: 220px;
+    gap: 8px;
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 300px;
+  }
 }
