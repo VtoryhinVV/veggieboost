@@ -4,29 +4,73 @@
 .orderCall___container {
   display: flex;
   align-items: center;
+
+  flex-direction: column;
   padding-top: 38px;
-  justify-content: space-between;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1280px) {
+    text-align: start;
+    font-size: 48px;
+    margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .orderCall___info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 614px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 0px;
+    align-items: baseline;
+  }
   h2 {
-    font-size: 48px;
+    font-size: 24px;
     text-transform: uppercase;
     font-weight: 700;
-    margin: 0 0 40px;
+    margin: 0 0 20px;
+    @media screen and (min-width: 768px) {
+      font-size: 40px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
   }
   p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.33;
-    width: 90%;
-    margin: 0 0 80px;
+
+    margin: 0 0 40px;
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 90%;
+      margin-bottom: 80px;
+    }
   }
 }
 
 .orderCall___img {
-  width: 525px;
-  height: 400px;
+  width: 335px;
+  height: 388px;
   background-image: url("/img/orderCall.png");
+  background-position: center;
+  background-size: cover;
   border-radius: 80px;
+  @media screen and (min-width: 768px) {
+    width: 525px;
+    height: 400px;
+  }
 }

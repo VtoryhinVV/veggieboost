@@ -6,25 +6,27 @@ export default function Footer() {
   return (
     <footer className={css.footer}>
       <div className={clsx("container", css.footer___container)}>
-        <div className={css.footer___logo}>
-          <div className={css.footer___img}></div>
-          <Link to="/">
-            <svg width="120" height="20">
-              <use href="svg-icons.svg#icon-logo"></use>
-            </svg>
-          </Link>
+        <div className={css.footer___logoBtn}>
+          <div className={css.footer___logo}>
+            <div className={css.footer___img}></div>
+            <Link to="/">
+              <svg width="120" height="20">
+                <use href="svg-icons.svg#icon-logo"></use>
+              </svg>
+            </Link>
+          </div>
+          <ul className={css.footer___nav}>
+            <li>
+              <Link to="/how_it_works">How It Works</Link>
+            </li>
+            <li>
+              <Link to="/products">Vegetables</Link>
+            </li>
+            <li>
+              <Link to="/contacts">Contacts</Link>
+            </li>
+          </ul>
         </div>
-        <ul className={css.footer___nav}>
-          <li>
-            <Link to="/how_it_works">How It Works</Link>
-          </li>
-          <li>
-            <Link to="/products">Vegetables</Link>
-          </li>
-          <li>
-            <Link to="/contacts">Contacts</Link>
-          </li>
-        </ul>
         <div>
           <ul className={css.footer___social}>
             <li>
