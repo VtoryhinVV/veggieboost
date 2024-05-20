@@ -1,12 +1,15 @@
 .orderCall {
-  margin-bottom: 124px;
+  padding-top: 72px;
+  margin-bottom: 80px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 124px;
+  }
 }
 .orderCall___container {
   display: flex;
   align-items: center;
 
   flex-direction: column;
-  padding-top: 38px;
   text-align: center;
   @media screen and (min-width: 768px) {
     font-size: 40px;
@@ -14,7 +17,6 @@
   @media screen and (min-width: 1280px) {
     text-align: start;
     font-size: 48px;
-    margin-bottom: 40px;
     flex-direction: row;
     justify-content: space-between;
   }
