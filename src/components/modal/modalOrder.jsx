@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { useFormik } from "formik";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -15,7 +15,34 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-export default function ModalOrder({ close, status, list }) {
+export default function ModalOrder({
+  close,
+  status,
+  list = [],
+  handleChangeWeight,
+}) {
+  function handleChange(ev) {
+    const { id, value } = ev.target;
+    handleChangeWeight(id, value);
+  }
+
+  function totalPrice() {
+    return list.reduce((acc, prod) => acc + prod.price * prod.weightOrder, 0);
+  }
+
+  // const initialValues = {
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   text: "",
+  // };
+  // const formik = useFormik({
+  //   initialValues,
+  //   onSubmit: (values) => {
+  //     alert(JSON.stringify(values, null, 2));
+  //   },
+  // });
+
   return (
     <Modal
       isOpen={status}
@@ -26,16 +53,34 @@ export default function ModalOrder({ close, status, list }) {
     >
       <h2>Your Order</h2>
       <button onClick={close}>close</button>
-      {list &&
-        list.map((info, idx) => {
-          return <div key={idx}>{info.name}</div>;
-        })}
-      <form>
-        <input />
-        <input />
-        <input />
-        <input />
-      </form>
+      {list && (
+        <>
+          <ul>
+            {list.map((info, idx) => {
+              return (
+                <li key={idx}>
+                  <label htmlFor={info.name}>{info.name}</label>
+                  <input
+                    id={info.name}
+                    type="number"
+                    placeholder={info.weightOrder}
+                    onChange={handleChange}
+                  />
+                  <p>{info.price}</p>
+                </li>
+              );
+            })}
+          </ul>
+          <div>
+            <p>Total Price</p>
+            <p>{totalPrice()}</p>
+          </div>
+        </>
+      )}
+      {/*
+      <form onSubmit={formik.handleSubmit}>
+        <button type="submit">Submit</button>
+      </form> */}
     </Modal>
   );
 }

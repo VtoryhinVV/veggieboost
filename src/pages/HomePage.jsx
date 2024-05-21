@@ -6,13 +6,13 @@ import OrderCall from "../components/orderCall/orderCall";
 import ProductList from "../components/productList/productList";
 import Shipping from "../components/shipping/shipping";
 
-export default function Home({ addProd }) {
+export default function Home({ addProd, orderList }) {
   return (
     <>
       <Hero />
       <EasyStep />
       <Banner />
-      <ProductList add={addProd} />
+      <ProductList add={addProd} orderList={orderList} />
       <Shipping />
       <OrderCall />
       <ModalOrder />

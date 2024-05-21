@@ -1,9 +1,9 @@
 import ProductList from "../components/productList/productList";
 
-export default function VegetablesPage({ addProd }) {
+export default function VegetablesPage({ addProd, orderList }) {
   return (
     <>
-      <ProductList add={addProd} />
+      <ProductList add={addProd} orderList={orderList} />
     </>
   );
 }

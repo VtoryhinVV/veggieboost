@@ -1,8 +1,12 @@
+import clsx from "clsx";
 import css from "./productCard.module.css";
 
-export default function ProductCard({ product, handleAdd }) {
+export default function ProductCard({ product, handleAdd, accent }) {
   return (
-    <li className={css.card} onClick={() => handleAdd(product)}>
+    <li
+      className={clsx(css.card, { [css.isOutlined]: accent(product.name) })}
+      onClick={() => handleAdd({ ...product, weightOrder: 1 })}
+    >
       <div>
         <h3>{product.name}</h3>
         <p className={css.card___type}>{product.type}</p>

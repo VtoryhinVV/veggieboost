@@ -2,7 +2,7 @@ import { data } from "../../data/data";
 import ProductCard from "../productСard/productСard";
 import css from "./productList.module.css";
 
-export default function ProductList({ add }) {
+export default function ProductList({ add, orderList = {} }) {
   return (
     <section className={css.productList}>
       <div className="container">
@@ -16,7 +16,14 @@ export default function ProductList({ add }) {
         </div>
         <ul className={css.productList___products}>
           {data.map((info, idx) => {
-            return <ProductCard key={idx} product={info} handleAdd={add} />;
+            return (
+              <ProductCard
+                key={idx}
+                product={info}
+                handleAdd={add}
+                accent={orderList}
+              />
+            );
           })}
         </ul>
         <button type="submit" className={css.productList___orderBtn}>

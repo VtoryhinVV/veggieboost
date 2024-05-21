@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  z-index: 500;
   background-color: white;
   width: 100%;
 }
@@ -57,7 +58,8 @@
   gap: 20px;
   flex-direction: column;
   align-items: center;
-
+  position: relative;
+  z-index: 600;
   a {
     text-decoration: none;
 
@@ -85,7 +87,7 @@
   border: none;
   cursor: pointer;
   position: relative;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 500px) {
     display: flex;
     transition: fill 250ms linear;
     &:hover,

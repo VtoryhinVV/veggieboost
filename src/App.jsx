@@ -30,20 +30,47 @@ function App() {
   function handleDeleteProd(prod) {
     setOrderList(orderList.filter((option) => option.name !== prod.name));
   }
+
+  function handleChangeWeight(name, weight) {
+    const updatedItems = orderList.map((item) =>
+      item.name === name ? { ...item, weightOrder: weight } : item
+    );
+    setOrderList(updatedItems);
+  }
+  function order(name) {
+    if (orderList.find((prod) => prod.name === name)) {
+      return true;
+    }
+    return false;
+  }
+
   return (
     <>
       <Header openModal={openModal} amount={orderList.length} />
       <Routes>
-        <Route path="/" element={<Home addProd={addProductToList} />} />
+        <Route
+          path="/"
+          element={<Home addProd={addProductToList} orderList={order} />}
+        />
         <Route path="/how_it_works" element={<HowItWorksPage />} />
         <Route
           path="/products"
-          element={<VegetablesPage addProd={addProductToList} />}
+          element={
+            <VegetablesPage addProd={addProductToList} orderList={order} />
+          }
         />
         <Route path="/contacts" element={<ContactPage />} />
-        <Route path="*" element={<Home addProd={addProductToList} />} />
+        <Route
+          path="*"
+          element={<Home addProd={addProductToList} orderList={order} />}
+        />
       </Routes>
-      <ModalOrder close={closeModal} status={modalIsOpen} list={orderList} />
+      <ModalOrder
+        close={closeModal}
+        status={modalIsOpen}
+        list={orderList}
+        handleChangeWeight={handleChangeWeight}
+      />
       <Footer />
     </>
   );
