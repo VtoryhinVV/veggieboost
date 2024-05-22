@@ -1,0 +1,72 @@
+.modal____title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 40px;
+  }
+}
+.closeBtn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: color 200ms linear;
+  &:hover,
+  &:active {
+    color: green;
+  }
+}
+
+.modal___order {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  gap: 12px;
+  li {
+    list-style: none;
+    display: flex;
+    line-height: 24px;
+    label {
+      margin-right: auto;
+    }
+    input {
+      width: 15%;
+      margin-right: 4px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.modal___totalPrice {
+  display: flex;
+  justify-content: end;
+  gap: 4px;
+}
+
+.modal___infoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.modal___formGroup {
+  input {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+}
+
+.error {
+  color: red;
+}

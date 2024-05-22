@@ -30,11 +30,14 @@ export default function Header({ openModal, amount }) {
               <Link to="/how_it_works">How It Works</Link>
               <Link to="/products">Vegetables</Link>
               <Link to="/contacts">Contacts</Link>
-              <Link to="/order" className={css.header___orderIconMob}>
+              <button className={css.header___orderIconMob} onClick={openModal}>
                 <svg width="20" height="20">
                   <use href="svg-icons.svg#icon-cart"></use>
                 </svg>
-              </Link>
+                {amount > 0 && (
+                  <div className={css.header___orderAmount}>{amount}</div>
+                )}
+              </button>
             </div>
           </BurgerButton>
         </nav>

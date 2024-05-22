@@ -22,13 +22,13 @@ function App() {
 
   function addProductToList(prod) {
     if (orderList.find((option) => option.name === prod.name)) {
-      handleDeleteProd(prod);
+      handleDeleteProd(prod.name);
       return;
     }
     setOrderList([...orderList, prod]);
   }
-  function handleDeleteProd(prod) {
-    setOrderList(orderList.filter((option) => option.name !== prod.name));
+  function handleDeleteProd(name) {
+    setOrderList(orderList.filter((option) => option.name !== name));
   }
 
   function handleChangeWeight(name, weight) {
@@ -50,19 +50,35 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home addProd={addProductToList} orderList={order} />}
+          element={
+            <Home
+              addProd={addProductToList}
+              orderList={order}
+              openModal={openModal}
+            />
+          }
         />
         <Route path="/how_it_works" element={<HowItWorksPage />} />
         <Route
           path="/products"
           element={
-            <VegetablesPage addProd={addProductToList} orderList={order} />
+            <VegetablesPage
+              addProd={addProductToList}
+              orderList={order}
+              openModal={openModal}
+            />
           }
         />
         <Route path="/contacts" element={<ContactPage />} />
         <Route
           path="*"
-          element={<Home addProd={addProductToList} orderList={order} />}
+          element={
+            <Home
+              addProd={addProductToList}
+              orderList={order}
+              openModal={openModal}
+            />
+          }
         />
       </Routes>
       <ModalOrder
@@ -70,6 +86,7 @@ function App() {
         status={modalIsOpen}
         list={orderList}
         handleChangeWeight={handleChangeWeight}
+        del={handleDeleteProd}
       />
       <Footer />
     </>
