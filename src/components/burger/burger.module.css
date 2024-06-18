@@ -1,0 +1,60 @@
+.burgerMenu {
+  @media screen and (min-width: 500px) {
+    display: none;
+  }
+}
+
+.burgerButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background: black;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.open .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background: #77ac63;
+}
+
+.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.open .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background: #77ac63;
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  background: #77ac63;
+
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.open .menu {
+  padding: 50px 0;
+  opacity: 1;
+  height: auto;
+}

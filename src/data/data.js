@@ -3,7 +3,7 @@ export const data = [
     name: "Carrot",
     type: "plant",
     src: "/img/CardProduct/Carrot.png",
-    price: "100",
+    price: "30",
   },
   {
     name: "Brussel sprouts",

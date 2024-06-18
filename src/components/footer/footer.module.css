@@ -4,8 +4,27 @@
 }
 .footer___container {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+    text-align: start;
+    gap: 0;
+    flex-direction: row;
+  }
+}
+.footer___logoBtn {
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    gap: 166px;
+  }
 }
 
 .footer___logo {
@@ -14,10 +33,15 @@
   gap: 20px;
   align-items: center;
 }
+
 .footer___img {
-  width: 349px;
-  height: 179px;
   background: center no-repeat url("/img/vegetablesFooter.png");
+  display: none;
+  @media screen and (min-width: 350px) {
+    display: block;
+    width: 349px;
+    height: 179px;
+  }
 }
 
 .footer___nav {
@@ -57,11 +81,11 @@
       width: 44px;
       height: 44px;
       transition: fill 250ms, border-color 250ms linear;
-    }
-    a:hover,
-    a:focus {
-      fill: green;
-      border-color: green;
+      &:hover,
+      &:focus {
+        fill: #a1c487;
+        border-color: #a1c487;
+      }
     }
   }
 }

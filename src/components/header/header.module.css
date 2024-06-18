@@ -1,26 +1,117 @@
 .header {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 100%;
+}
+
+.header___nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 0;
+
+  @media screen and (min-width: 768px) {
+    justify-content: baseline;
+  }
+}
+
+.header___logo {
+  height: min-content;
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 120px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 360px;
+  }
 }
 
 .header___mainBtn {
-  display: flex;
-  gap: 20px;
+  display: none;
 
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
+  @media screen and (min-width: 500px) {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      height: min-content;
+      color: black;
+      transition: color 250ms linear;
+      &:hover,
+      &:focus {
+        color: green;
+      }
+    }
   }
-
-  a:hover,
-  a:focus {
-    color: green;
+  @media screen and (min-width: 768px) {
+    margin-right: auto;
   }
 }
 
-.header___orderIcon:hover,
-.header___orderIcon:focus {
-  fill: green;
+.header___mainBtnMob {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 600;
+  a {
+    text-decoration: none;
+
+    height: min-content;
+    color: white;
+    transition: color 250ms linear;
+    &:hover,
+    &:focus {
+      color: green;
+    }
+  }
+}
+
+.header___orderIconMob {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  position: relative;
+  svg {
+    fill: white;
+    transition: fill 250ms linear;
+    &:hover,
+    &:focus {
+      fill: green;
+    }
+  }
+}
+
+.header___orderIcon {
+  display: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  @media screen and (min-width: 500px) {
+    display: flex;
+    transition: fill 250ms linear;
+    &:hover,
+    &:focus {
+      fill: green;
+    }
+  }
+}
+
+.header___orderAmount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(20%, -50%);
+  border-radius: 100%;
+  background-color: red;
+  color: white;
+  padding: 1px 4px;
 }

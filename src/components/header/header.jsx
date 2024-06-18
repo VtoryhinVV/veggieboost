@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import css from "./header.module.css";
-export default function Header() {
+import BurgerButton from "../burger/burger";
+
+export default function Header({ openModal, amount }) {
   return (
-    <header>
+    <header className={css.header}>
       <div className="container">
-        <nav className={css.header}>
-          <Link to="/">
+        <nav className={css.header___nav}>
+          <Link to="/" className={css.header___logo}>
             <svg width="120" height="20">
               <use href="svg-icons.svg#icon-logo"></use>
             </svg>
@@ -15,12 +17,29 @@ export default function Header() {
             <Link to="/products">Vegetables</Link>
             <Link to="/contacts">Contacts</Link>
           </div>
-
-          <Link to="/order">
-            <svg width="20" height="20" className={css.header___orderIcon}>
+          <button className={css.header___orderIcon} onClick={openModal}>
+            <svg width="20" height="20">
               <use href="svg-icons.svg#icon-cart"></use>
             </svg>
-          </Link>
+            {amount > 0 && (
+              <div className={css.header___orderAmount}>{amount}</div>
+            )}
+          </button>
+          <BurgerButton>
+            <div className={css.header___mainBtnMob}>
+              <Link to="/how_it_works">How It Works</Link>
+              <Link to="/products">Vegetables</Link>
+              <Link to="/contacts">Contacts</Link>
+              <button className={css.header___orderIconMob} onClick={openModal}>
+                <svg width="20" height="20">
+                  <use href="svg-icons.svg#icon-cart"></use>
+                </svg>
+                {amount > 0 && (
+                  <div className={css.header___orderAmount}>{amount}</div>
+                )}
+              </button>
+            </div>
+          </BurgerButton>
         </nav>
       </div>
     </header>

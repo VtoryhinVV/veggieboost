@@ -4,11 +4,19 @@
 
 .phoneInput___buttonSubmite {
   margin-left: -15px;
-  padding: 5px 25px;
+  padding: 5px 35px;
+  font-size: 14px;
   border: none;
   border-radius: 100px;
   color: white;
   background-color: #fc8a11;
-
   cursor: pointer;
+  transition: background-color 250ms linear;
+  &:focus,
+  &:hover {
+    background-color: #a1c487;
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
 }
