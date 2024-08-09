@@ -1,72 +1,143 @@
 .modal____title {
-  font-size: 20px;
-  text-transform: uppercase;
-  margin: 20px 0;
-  @media screen and (min-width: 768px) {
-    font-size: 28px;
-  }
-  @media screen and (min-width: 1280px) {
-    font-size: 40px;
-  }
+	font-size: 20px;
+	text-transform: uppercase;
+	margin: 20px 0;
+	@media screen and (min-width: 768px) {
+		font-size: 28px;
+	}
+	@media screen and (min-width: 1280px) {
+		font-size: 40px;
+	}
 }
 .closeBtn {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  transition: color 200ms linear;
-  &:hover,
-  &:active {
-    color: green;
-  }
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	transition: color, font-weight, transform 200ms linear;
+	background-color: transparent;
+	&:hover,
+	&:active {
+		color: green;
+		font-weight: 700;
+		transform: rotate(90deg);
+	}
 }
 
 .modal___order {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  gap: 12px;
-  li {
-    list-style: none;
-    display: flex;
-    line-height: 24px;
-    label {
-      margin-right: auto;
-    }
-    input {
-      width: 15%;
-      margin-right: 4px;
-    }
-    p {
-      margin: 0;
-    }
-  }
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	gap: 16px;
+	li {
+		list-style: none;
+		display: flex;
+		line-height: 24px;
+		position: relative;
+		padding: 5px;
+		border-radius: 10px;
+		&:hover {
+			background-color: #eaefea;
+		}
+		label {
+			margin-right: auto;
+		}
+
+		input {
+			width: 10%;
+			margin-right: 4px;
+			border-radius: 5px;
+			border: none;
+			border-bottom: 1px solid green;
+			text-align: center;
+			&::placeholder {
+				color: black;
+			}
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+			}
+		}
+
+		p {
+			margin: 0;
+		}
+		button {
+			margin: 0 8px;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			padding: 0;
+			svg {
+				fill: #fc8a11;
+				transition: fill 250ms linear;
+			}
+			&:hover svg,
+			&:focus svg {
+				fill: green;
+			}
+		}
+	}
 }
 
 .modal___totalPrice {
-  display: flex;
-  justify-content: end;
-  gap: 4px;
+	display: flex;
+	justify-content: end;
+	gap: 4px;
 }
 
 .modal___infoForm {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.modal___formOrder {
+	padding: 5px 35px;
+	font-size: 14px;
+	border: none;
+	border-radius: 100px;
+	color: white;
+	background-color: #fc8a11;
+	cursor: pointer;
+	transition: background-color 250ms linear;
+	&:focus,
+	&:hover {
+		background-color: #a1c487;
+	}
 }
 .modal___formGroup {
-  input {
-    width: 100%;
-  }
-  textarea {
-    width: 100%;
-    resize: none;
-  }
+	input {
+		width: 100%;
+		border-radius: 20px;
+		padding: 4px 8px;
+		border: 1px solid #fc8a11;
+		&:focus-visible,
+		&:focus {
+			outline: none;
+			border-width: 2px;
+		}
+	}
+
+	textarea {
+		width: 100%;
+		resize: none;
+		border-radius: 10px;
+		padding: 4px 8px;
+		border: 1px solid #fc8a11;
+		margin-bottom: 8px;
+		&:focus-visible,
+		&:focus {
+			outline: none;
+			border-width: 2px;
+		}
+	}
 }
 
 .error {
-  color: red;
+	color: red;
+	padding: 4px 8px;
 }
